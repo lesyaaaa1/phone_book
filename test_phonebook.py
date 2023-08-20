@@ -32,10 +32,6 @@ class Test(TestCase):
         self.assertEqual(search_record(self.dict_1, 'sct', 'kiyv'), {})
         self.assertEqual(search_record(self.dict_1, 'sc', 'ukraine'), self.info)
 
-    def test_read_dataset(self):
-        read_dataset({"0678817737": {"first_name": "lesya", "last_name": "kiriliuk", "city": "rivne", "country": "ukraine"}})
-        self.assertIn({"0678817737": {"first_name": "lesya", "last_name": "kiriliuk", "city": "rivne", "country": "ukraine"}}, )
-
     def test_write_and_read_dataset(self):
         write_dataset(self.info, 'file_test.json')
         self.assertEqual(self.info, read_dataset('file_test.json'))
